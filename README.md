@@ -13,7 +13,7 @@ To update, just do
 
 ## License
 
-Copyright (c) Heinrich Kruger. Distributed under the MIT license (see LICENSE).
+Copyright (c) Heinrich Kruger. Distributed under the [MIT license](LICENSE).
 
 <!---
 vim: wrap
