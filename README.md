@@ -15,4 +15,6 @@ To update, just do
 
 Copyright (c) Heinrich Kruger. Distributed under the MIT license (see LICENSE).
 
-[//]: # vim: wrap
+<!---
+vim: wrap
+--->
