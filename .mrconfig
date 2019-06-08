@@ -1,3 +1,6 @@
+[.]
+checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
+
 [ack.vim]
 checkout = git clone 'git@github.com:mileszs/ack.vim' 'ack.vim'
 skip = lazy
