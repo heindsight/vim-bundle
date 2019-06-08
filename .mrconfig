@@ -1,143 +1,107 @@
 [.]
 checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
-fixups = git config --local 'status.showUntrackedFiles' no
 
 [ack.vim]
 checkout = git clone 'git@github.com:mileszs/ack.vim' 'ack.vim'
-skip = lazy
 
 [ctrlp.vim]
 checkout = git clone 'git@github.com:ctrlpvim/ctrlp.vim.git' 'ctrlp.vim'
-skip = lazy
 
 [linediff.vim]
 checkout = git clone 'git@github.com:AndrewRadev/linediff.vim.git' 'linediff.vim'
-skip = lazy
 
 [python-syntax]
 checkout = git clone 'git@github.com:hdima/python-syntax' 'python-syntax'
-skip = lazy
 
 [vim-fugitive]
 checkout = git clone 'git@github.com:tpope/vim-fugitive.git' 'vim-fugitive'
-skip = lazy
 
 [vim-latex]
 checkout = git clone 'git@github.com:vim-latex/vim-latex.git' 'vim-latex'
-skip = lazy
 
 [vim-surround]
 checkout = git clone 'git@github.com:tpope/vim-surround.git' 'vim-surround'
-skip = lazy
 
 [vim-unimpaired]
 checkout = git clone 'git@github.com:tpope/vim-unimpaired.git' 'vim-unimpaired'
-skip = lazy
 
 [vim-rst-tables]
 checkout = git clone 'git@github.com:nvie/vim-rst-tables' 'vim-rst-tables'
-skip = lazy
 
 [gundo.vim]
 checkout = git clone 'git@github.com:sjl/gundo.vim' 'gundo.vim'
-skip = lazy
 
 [vim-easy-align]
 checkout = git clone 'git@github.com:junegunn/vim-easy-align.git' 'vim-easy-align'
-skip = lazy
 
 [vim-pathogen]
 checkout = git clone 'git@github.com:tpope/vim-pathogen.git' 'vim-pathogen'
-skip = lazy
 
 [lineno.vim]
 checkout = git clone 'git@github.com:heindsight/lineno.vim.git' 'lineno.vim'
-skip = lazy
 
 [SimpylFold]
 checkout = git clone 'git@github.com:tmhedberg/SimpylFold.git' 'SimpylFold'
-skip = lazy
 
 [vim-argwrap]
 checkout = git clone 'git@github.com:FooSoft/vim-argwrap.git' 'vim-argwrap'
-skip = lazy
 
 [vim-repeat]
 checkout = git clone 'git@github.com:tpope/vim-repeat.git' 'vim-repeat'
-skip = lazy
 
 [vim-eunuch]
 checkout = git clone 'git@github.com:tpope/vim-eunuch.git' 'vim-eunuch'
-skip = lazy
 
 [vim-sleuth]
 checkout = git clone 'git@github.com:tpope/vim-sleuth.git' 'vim-sleuth'
-skip = lazy
 
 [vim-sensible]
 checkout = git clone 'git@github.com:tpope/vim-sensible.git' 'vim-sensible'
-skip = lazy
 
 [scratch.vim]
 checkout = git clone 'git@github.com:mtth/scratch.vim.git' 'scratch.vim'
-skip = lazy
 
 [nerdcommenter]
 checkout = git clone 'git@github.com:scrooloose/nerdcommenter.git' 'nerdcommenter'
-skip = lazy
 
 [coveragepy.vim]
 checkout = git clone 'git@github.com:alfredodeza/coveragepy.vim.git' 'coveragepy.vim'
-skip = lazy
 
 [vim-rhubarb]
 checkout = git clone 'git@github.com:tpope/vim-rhubarb.git' 'vim-rhubarb'
-skip = lazy
 
 [vim-markdown]
 checkout = git clone 'git@github.com:tpope/vim-markdown.git' 'vim-markdown'
-skip = lazy
 
 [ale]
 checkout = git clone 'git@github.com:w0rp/ale.git' 'ale'
-skip = lazy
 
 [puppet-syntax-vim]
 checkout = git clone 'git@github.com:puppetlabs/puppet-syntax-vim.git' 'puppet-syntax-vim'
-skip = lazy
 
 [vim-gitgutter]
 checkout = git clone 'git@github.com:airblade/vim-gitgutter.git' 'vim-gitgutter'
-skip = lazy
 
 [vader.vim]
 checkout = git clone 'git@github.com:junegunn/vader.vim.git' 'vader.vim'
-skip = lazy
 
 [taboo.vim]
 checkout = git clone 'git@github.com:heindsight/taboo.vim.git' 'taboo.vim'
-skip = lazy
 
 [vim-airline]
 checkout = git clone 'git@github.com:vim-airline/vim-airline.git' 'vim-airline'
-skip = lazy
 
 [vim-airline-themes]
 checkout = git clone 'git@github.com:vim-airline/vim-airline-themes.git' 'vim-airline-themes'
-skip = lazy
 
 [vim-monokai]
 checkout = git clone 'git@github.com:heindsight/vim-monokai' 'vim-monokai'
-skip = lazy
 
 [sideways.vim]
 checkout = git clone 'git@github.com:AndrewRadev/sideways.vim.git' 'sideways.vim'
-skip = lazy
 
 [mediawiki.vim]
 checkout = git clone 'git@github.com:chikamichi/mediawiki.vim.git' 'mediawiki.vim'
-skip = lazy
 
 [vim-mediawiki-editor]
 checkout = git clone 'git@github.com:aquach/vim-mediawiki-editor.git' 'vim-mediawiki-editor'
-skip = lazy
