@@ -21,4 +21,4 @@ To update the bundle, do:
 
 ## License
 
-Copyright (c) Heinrich Kruger. Distributed under the [MIT license](LICENSE).
+Copyright (c) Heinrich Kruger. Distributed under the [MIT licence](LICENCE).
