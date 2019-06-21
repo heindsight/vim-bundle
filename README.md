@@ -31,7 +31,7 @@ that you will have to configure myrepos to trust the vim bundle `.mrconfig`
 file. You can do that by adding `~/.vim/bundle/.mrconfig` to your `~/.mrtrust`
 file:
 
-    $ echo "~/.vim/bundle/.mrconfig" >> ~/.mrconfig
+    $ echo "~/.vim/bundle/.mrconfig" >> ~/.mrtrust
 
 ## License
 
