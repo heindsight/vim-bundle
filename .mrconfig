@@ -1,5 +1,37 @@
+[DEFAULT]
+lib =
+    _record_repo_path() {
+      outfile=$1
+      echo "${MR_REPO}" >>"${outfile}"
+    }
+    _record_state() {
+        state_file=$1
+        tmp_state_file=$(tempfile -p mr_state_file_ -s "${MR_REPO//\//_}")
+        mr --force --quiet run _record_repo_path "${tmp_state_file}" || :
+        sort "${tmp_state_file}" > "${state_file}"
+        rm "${tmp_state_file}"
+    }
+    _delete_removed() {
+        before=$1
+        after=$2
+        diff "${before}" "${after}" |
+            awk '/^</ { sub(/^< /, ""); print }' |
+            xargs -I % rm -fr "%"
+    }
+    _update_bundle() {
+        state_before=$(tempfile -p mr_update_pre_ -s "${MR_REPO//\//_}")
+        state_after=$(tempfile -p mr_update_post_ -s "${MR_REPO//\//_}")
+        _record_state "${state_before}"
+        git pull "$@"
+        _record_state "${state_after}"
+        _delete_removed "${state_before}" "${state_after}"
+        rm "${state_before}" "${state_after}"
+    }
+
 [.]
 checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
+bundleupdate = _update_bundle
+post_bundleupdate = mr update
 
 [ack.vim]
 checkout = git clone 'git@github.com:mileszs/ack.vim' 'ack.vim'
