@@ -35,4 +35,4 @@ file:
 
 ## License
 
-Copyright (c) Heinrich Kruger. Distributed under the [MIT licence](LICENCE).
+Copyright 2019 Heinrich Kruger. Distributed under the [MIT licence](LICENCE).
