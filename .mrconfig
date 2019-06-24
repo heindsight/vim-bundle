@@ -1,15 +1,18 @@
 [DEFAULT]
 lib =
     _record_repo_path() {
-      outfile=$1
-      echo "${MR_REPO}" >>"${outfile}"
+      outfd=$1
+      echo "${MR_REPO}" >&"${outfd}"
     }
     _record_state() {
         state_file=$1
-        tmp_state_file=$(tempfile -p mr_state_file_ -s "${MR_REPO//\//_}")
-        mr --force --quiet run _record_repo_path "${tmp_state_file}" || :
-        sort "${tmp_state_file}" > "${state_file}"
+        tmp_state_file=$(mktemp -u -p '' "mr_state_file_XXXXXXXX_${MR_REPO//\//_}")
+        mkfifo "${tmp_state_file}"
+        sort < "${tmp_state_file}" > "${state_file}" &
+        exec {tmp_state_fd}>"${tmp_state_file}"
         rm "${tmp_state_file}"
+        mr --quiet --force run _record_repo_path "${tmp_state_fd}" ||:
+        exec {tmp_state_fd}>&-
     }
     _delete_removed() {
         before=$1
@@ -19,8 +22,8 @@ lib =
             xargs -I % rm -fr "%"
     }
     _update_bundle() {
-        state_before=$(tempfile -p mr_update_pre_ -s "${MR_REPO//\//_}")
-        state_after=$(tempfile -p mr_update_post_ -s "${MR_REPO//\//_}")
+        state_before=$(mktemp -p '' "mr_update_pre_XXXXXXXX_${MR_REPO//\//_}")
+        state_after=$(mktemp -p '' "mr_update_post_XXXXXXXX_${MR_REPO//\//_}")
         _record_state "${state_before}"
         git pull "$@"
         _record_state "${state_after}"
