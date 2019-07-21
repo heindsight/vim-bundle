@@ -5,8 +5,9 @@ lib =
       echo "${MR_REPO}" >&"${outfd}"
     }
     _record_state() {
+        tmp_template="${TMPDIR:-/tmp}/mr_state_file_XXXXXXXX_${MR_REPO##*/}"
         state_file=$1
-        tmp_state_file=$(mktemp -u -p '' "mr_state_file_XXXXXXXX_${MR_REPO##*/}")
+        tmp_state_file=$(mktemp -u "${tmp_template}")
         mkfifo "${tmp_state_file}"
         sort < "${tmp_state_file}" > "${state_file}" &
         exec 3>"${tmp_state_file}"
