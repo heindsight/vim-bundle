@@ -31,7 +31,7 @@ lib =
         _delete_removed "${state_before}" "${state_after}"
         rm "${state_before}" "${state_after}"
     }
-printrepos = _print_repo_path
+printrepos = _print_repo_path "$@"
 
 [.]
 checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
