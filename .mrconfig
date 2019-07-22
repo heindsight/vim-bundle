@@ -12,7 +12,7 @@ lib =
         exec 3>"${tmp_state_file}"
         tmp_state_fd=3
         rm "${tmp_state_file}"
-        mr --quiet --force run _print_repo_path "${tmp_state_fd}" ||:
+        mr --quiet --force printrepos "${tmp_state_fd}" ||:
         exec 3>&-
     }
     _delete_removed() {
@@ -31,6 +31,7 @@ lib =
         _delete_removed "${state_before}" "${state_after}"
         rm "${state_before}" "${state_after}"
     }
+printrepos = _print_repo_path
 
 [.]
 checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
