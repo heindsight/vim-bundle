@@ -1,8 +1,8 @@
 [DEFAULT]
 lib =
-    _record_repo_path() {
-      outfd=$1
-      echo "${MR_REPO}" >&"${outfd}"
+    _print_repo_path() {
+      outfd=${1:-1}
+      printf '%s\n' "${MR_REPO}" >&"${outfd}"
     }
     _record_state() {
         state_file=$1
@@ -12,7 +12,7 @@ lib =
         exec 3>"${tmp_state_file}"
         tmp_state_fd=3
         rm "${tmp_state_file}"
-        mr --quiet --force run _record_repo_path "${tmp_state_fd}" ||:
+        mr --quiet --force run _print_repo_path "${tmp_state_fd}" ||:
         exec 3>&-
     }
     _delete_removed() {
