@@ -1,8 +1,8 @@
 [DEFAULT]
 lib =
     _print_repo_path() {
-      outfd=${1:-1}
-      printf '%s\n' "${MR_REPO}" >&"${outfd}"
+        outfd=${1:-1}
+        printf '%s\n' "${MR_REPO}" >&"${outfd}"
     }
     _record_state() {
         state_file=$1
