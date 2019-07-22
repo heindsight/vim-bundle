@@ -5,9 +5,8 @@ lib =
       echo "${MR_REPO}" >&"${outfd}"
     }
     _record_state() {
-        tmp_template="${TMPDIR:-/tmp}/mr_state_file_XXXXXXXX_${MR_REPO##*/}"
         state_file=$1
-        tmp_state_file=$(mktemp -u "${tmp_template}")
+        tmp_state_file=$(mktemp -u -t "mr_state_file_XXXXXXXX_${MR_REPO##*/}")
         mkfifo "${tmp_state_file}"
         sort < "${tmp_state_file}" > "${state_file}" &
         exec 3>"${tmp_state_file}"
@@ -24,8 +23,8 @@ lib =
             xargs -I % rm -fr "%"
     }
     _update_bundle() {
-        state_before=$(mktemp -p '' "mr_update_pre_XXXXXXXX_${MR_REPO##*/}")
-        state_after=$(mktemp -p '' "mr_update_post_XXXXXXXX_${MR_REPO##*/}")
+        state_before=$(mktemp -t "mr_update_pre_XXXXXXXX_${MR_REPO##*/}")
+        state_after=$(mktemp -t "mr_update_post_XXXXXXXX_${MR_REPO##*/}")
         _record_state "${state_before}"
         git pull "$@"
         _record_state "${state_after}"
