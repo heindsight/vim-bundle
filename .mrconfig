@@ -1,15 +1,18 @@
 [DEFAULT]
 lib =
+    _escape_quotes() {
+        sed 's/\(["'\'']\)/\\\1/g'
+    }
     _print_repo_path() {
         outfd=${1:-1}
-        printf '%s\n' "${MR_REPO}" >&"${outfd}"
+        printf '%s\n' "${MR_REPO}" | _escape_repo_name >&"${outfd}"
     }
     _record_state() {
         state_file=$1
         tmp_state_file=$(mktemp -u -t "mr_state_file_XXXXXXXX_${MR_REPO##*/}")
         mkfifo "${tmp_state_file}"
         sort < "${tmp_state_file}" > "${state_file}" &
-        exec 3>"${tmp_state_file}"
+        exec 3> "${tmp_state_file}"
         tmp_state_fd=3
         rm "${tmp_state_file}"
         mr --quiet --force printrepos "${tmp_state_fd}" ||:
