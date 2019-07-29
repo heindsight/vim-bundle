@@ -5,7 +5,7 @@ lib =
     }
     _print_repo_path() {
         outfd=${1:-1}
-        printf '%s\n' "${MR_REPO}" | _escape_repo_name >&"${outfd}"
+        printf '%s\n' "${MR_REPO}" | _escape_quotes >&"${outfd}"
     }
     _record_state() {
         state_file=$1
