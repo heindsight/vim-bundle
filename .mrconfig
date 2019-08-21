@@ -4,12 +4,12 @@ lib =
         sed 's/\(["'\'']\)/\\\1/g'
     }
     _print_repo_path() {
-        outfd=${1:-1}
+        outfd="${1:-1}"
         printf '%s\n' "${MR_REPO}" | _escape_quotes >&"${outfd}"
     }
     _record_state() {
-        state_file=$1
-        tmp_state_file=$(mktemp -u -t "mr_state_file_XXXXXXXX_${MR_REPO##*/}")
+        state_file="$1"
+        tmp_state_file="$(mktemp -u -t "mr_state_file_XXXXXXXX_${MR_REPO##*/}")"
         mkfifo "${tmp_state_file}"
         sort < "${tmp_state_file}" > "${state_file}" &
         exec 3> "${tmp_state_file}"
@@ -19,15 +19,15 @@ lib =
         exec 3>&-
     }
     _delete_removed() {
-        before=$1
-        after=$2
+        before="$1"
+        after="$2"
         diff "${before}" "${after}" |
             sed -n '/^< / s/^< //p' |
             xargs -I % rm -fr "%"
     }
     _update_bundle() {
-        state_before=$(mktemp -t "mr_update_pre_XXXXXXXX_${MR_REPO##*/}")
-        state_after=$(mktemp -t "mr_update_post_XXXXXXXX_${MR_REPO##*/}")
+        state_before="$(mktemp -t "mr_update_pre_XXXXXXXX_${MR_REPO##*/}")"
+        state_after="$(mktemp -t "mr_update_post_XXXXXXXX_${MR_REPO##*/}")"
         _record_state "${state_before}"
         git pull "$@"
         _record_state "${state_after}"
