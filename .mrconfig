@@ -4,7 +4,7 @@ lib =
         git fetch
         git diff --no-color -R @{u} -- .mrconfig |
             sed -En 's/^-\[(.*)\]$/\1/p' |
-            xargs -I % rm -fr "%"
+            xargs -I % rm -fr '%'
         git merge @{u}
     }
 
