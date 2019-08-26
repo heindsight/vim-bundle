@@ -20,7 +20,7 @@ To update the bundle, do:
     $ mr bundleupdate
 
 This will delete your local copies of any repos that have been deleted from the
-bundle before updating the remainging repos (and cloning any newly added
+bundle before updating the remaining repos (and cloning any newly added
 repos). If you do not want removed repos to be deleted automatically, you can
 use
 
