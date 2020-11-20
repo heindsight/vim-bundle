@@ -1,5 +1,17 @@
+[DEFAULT]
+lib =
+	_update_bundle() {
+		git fetch
+		git diff --no-color -R @{u} -- .mrconfig |
+			sed -En 's/^-\[(.*)\]$/\1/p' |
+			xargs -I % rm -fr '%'
+		git merge @{u}
+	}
+
 [.]
 checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
+bundleupdate = _update_bundle
+post_bundleupdate = mr update
 
 [ack.vim]
 checkout = git clone 'git@github.com:mileszs/ack.vim' 'ack.vim'
@@ -110,4 +122,12 @@ checkout = git clone 'git@github.com:aquach/vim-mediawiki-editor.git' 'vim-media
 checkout = git clone 'git@github.com:Vimjas/vim-python-pep8-indent.git' 'vim-python-pep8-indent'
 
 [vim-terraform]
-checkout = git clone 'https://github.com/hashivim/vim-terraform' 'vim-terraform'
+checkout = git clone 'git@github.com:hashivim/vim-terraform.git' 'vim-terraform'
+
+[vim-toml]
+checkout = git clone 'git@github.com:cespare/vim-toml.git' 'vim-toml'
+
+[vim-cmake]
+checkout = git clone 'git@github.com:vhdirk/vim-cmake.git' 'vim-cmake'
+
+# vim: sw=8:ts=8:noet
