@@ -13,9 +13,6 @@ checkout = git clone 'git@github.com:heindsight/vim-bundle' '.'
 bundleupdate = _update_bundle
 post_bundleupdate = mr update
 
-[ack.vim]
-checkout = git clone 'git@github.com:mileszs/ack.vim' 'ack.vim'
-
 [ctrlp.vim]
 checkout = git clone 'git@github.com:ctrlpvim/ctrlp.vim.git' 'ctrlp.vim'
 
@@ -28,17 +25,11 @@ checkout = git clone 'git@github.com:hdima/python-syntax' 'python-syntax'
 [vim-fugitive]
 checkout = git clone 'git@github.com:tpope/vim-fugitive.git' 'vim-fugitive'
 
-[vim-latex]
-checkout = git clone 'git@github.com:vim-latex/vim-latex.git' 'vim-latex'
-
 [vim-surround]
 checkout = git clone 'git@github.com:tpope/vim-surround.git' 'vim-surround'
 
 [vim-unimpaired]
 checkout = git clone 'git@github.com:tpope/vim-unimpaired.git' 'vim-unimpaired'
-
-[vim-rst-tables]
-checkout = git clone 'git@github.com:nvie/vim-rst-tables' 'vim-rst-tables'
 
 [gundo.vim]
 checkout = git clone 'git@github.com:sjl/gundo.vim' 'gundo.vim'
@@ -69,9 +60,6 @@ checkout = git clone 'git@github.com:tpope/vim-sleuth.git' 'vim-sleuth'
 
 [vim-sensible]
 checkout = git clone 'git@github.com:tpope/vim-sensible.git' 'vim-sensible'
-
-[scratch.vim]
-checkout = git clone 'git@github.com:mtth/scratch.vim.git' 'scratch.vim'
 
 [nerdcommenter]
 checkout = git clone 'git@github.com:scrooloose/nerdcommenter.git' 'nerdcommenter'
