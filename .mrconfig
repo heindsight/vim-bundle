@@ -76,9 +76,6 @@ checkout = git clone 'git@github.com:tpope/vim-markdown.git' 'vim-markdown'
 [ale]
 checkout = git clone 'git@github.com:w0rp/ale.git' 'ale'
 
-[puppet-syntax-vim]
-checkout = git clone 'git@github.com:puppetlabs/puppet-syntax-vim.git' 'puppet-syntax-vim'
-
 [vim-gitgutter]
 checkout = git clone 'git@github.com:airblade/vim-gitgutter.git' 'vim-gitgutter'
 
@@ -111,6 +108,9 @@ checkout = git clone 'git@github.com:Vimjas/vim-python-pep8-indent.git' 'vim-pyt
 
 [vim-terraform]
 checkout = git clone 'git@github.com:hashivim/vim-terraform.git' 'vim-terraform'
+
+[vim-puppet]
+checkout = git clone 'git@github.com:rodjek/vim-puppet.git' 'vim-puppet'
 
 [vim-toml]
 checkout = git clone 'git@github.com:cespare/vim-toml.git' 'vim-toml'
